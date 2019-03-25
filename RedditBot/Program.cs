@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RedditMethods;
 
 namespace RedditBot
 {
@@ -10,12 +9,29 @@ namespace RedditBot
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+           var calls = new ApiCalls();
+           var firstUsers = calls.GetUsers().Result;
+           var redditObject = JsonConvert.DeserializeObject<RootObject>(firstUsers.ToString());
+           var afterParam = redditObject.data.after;
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            var redditUserList = new List<string>(); 
+
+            foreach (var child in redditObject.data.children)
+            {
+                redditUserList.Add(child.data.display_name);
+            }
+            
+            while (!string.IsNullOrEmpty(afterParam))
+            {
+                var nextUsers = calls.GetUsers(afterParam).Result;
+                redditObject = JsonConvert.DeserializeObject<RootObject>(nextUsers.ToString());
+                afterParam = redditObject.data.after;
+
+                foreach (var child in redditObject.data.children)
+                {
+                    redditUserList.Add(child.data.display_name);
+                }
+            }
         }
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditBot", "RedditBot\RedditBot.csproj", "{AAE430F0-522A-4FE8-BED9-87907F1E9192}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditMethods", "RedditMethods\RedditMethods.csproj", "{2924B1EB-55C9-4DA6-BA6B-53E8A73297BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AAE430F0-522A-4FE8-BED9-87907F1E9192}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE430F0-522A-4FE8-BED9-87907F1E9192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE430F0-522A-4FE8-BED9-87907F1E9192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2924B1EB-55C9-4DA6-BA6B-53E8A73297BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2924B1EB-55C9-4DA6-BA6B-53E8A73297BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2924B1EB-55C9-4DA6-BA6B-53E8A73297BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2924B1EB-55C9-4DA6-BA6B-53E8A73297BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
